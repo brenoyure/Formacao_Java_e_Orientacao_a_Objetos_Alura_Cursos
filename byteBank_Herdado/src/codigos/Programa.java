@@ -6,7 +6,7 @@ public class Programa {
 
         Funcionario breno = new Funcionario();
         breno.setNome("Breno Yuri");
-        breno.setCpf("057.947.163-20");
+        breno.setCPF("057.947.163-20");
         breno.setSalario(2600);
 
         System.out.println(breno.getNome());

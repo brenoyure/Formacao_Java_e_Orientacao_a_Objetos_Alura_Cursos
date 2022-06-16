@@ -1,3 +1,5 @@
+package codigos;
+
 public class Designer extends Funcionario {
 
     double getBonificacao() {
