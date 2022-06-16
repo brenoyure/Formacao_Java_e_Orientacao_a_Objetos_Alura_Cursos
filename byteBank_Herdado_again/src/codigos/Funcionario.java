@@ -13,7 +13,10 @@ public class Funcionario {
 
     // Método para devolver a Bonificação dos Funcionários
     double getBonificacao() {
-        return this.salario * 0.1;
+        /*
+         * Bonificação padrão dos Funcionários: 5% do salário.
+         */
+        return this.salario * 0.05;
     }
 
     // Métodos Getters & Setters

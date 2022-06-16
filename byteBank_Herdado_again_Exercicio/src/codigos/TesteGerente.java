@@ -4,18 +4,18 @@ public class TesteGerente {
 
     public static void main(String[] args) {
 
-        Gerente gerente_1 = new Gerente();
+        Gerente g1 = new Gerente();
 
-        gerente_1.setNome("Marco Frota");
-        gerente_1.setCPF("777.942.180-20");
-        gerente_1.setSalario(8500.0);
-        gerente_1.setSenha(739560);
+        g1.setNome("Breno");
+        g1.setCPF("057.254.566.20");
+        g1.setSenha(052142);
+        g1.setSalario(5000.0);
 
-        boolean autenticou = gerente_1.autentica(739560);
+        boolean autenticou = g1.autentica(052142);
 
         System.out.println(autenticou);
-        System.out.println("Salário é de R$" + gerente_1.getSalario());
-        System.out.println("Bonificação é de R$" + gerente_1.getBonificacao());
+        System.out.println(g1.getBonificacao());
+        
 
     }
 
