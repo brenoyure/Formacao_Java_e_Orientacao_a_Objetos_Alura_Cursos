@@ -1,6 +1,6 @@
 package codigos;
 
-public class Funcionario {
+public abstract class Funcionario {
 
     private String nome;
     private String cpf;
@@ -11,13 +11,12 @@ public class Funcionario {
 
     }
 
-    // Método para devolver a Bonificação dos Funcionários
-    double getBonificacao() {
-        /*
-         * Bonificação padrão dos Funcionários: 5% do salário.
-         */
-        return this.salario * 0.05;
-    }
+    /*
+     * Método Abstrato para devolver a Bonificação dos Funcionários
+     * Abstract é necessário pois não há método de bonificação padrão.
+     */
+
+    abstract double getBonificacao();
 
     // Métodos Getters & Setters
     void setNome(String nome) {

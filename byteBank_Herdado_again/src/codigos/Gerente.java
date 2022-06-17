@@ -22,7 +22,7 @@ public class Gerente extends Funcionario {
          * repetição de código, caso a bonificação padrão mude.
          */
         System.out.println("Método Bonificação do Gerente");
-        return super.getBonificacao() + super.getSalario();
+        return super.getSalario();
 
     }
 }
