@@ -2,7 +2,7 @@ package codigos;
 
 public abstract class Conta {
 
-    private double saldo;
+    protected double saldo;
     private int agencia;
     private int numeroConta;
     private Cliente titular;
@@ -15,10 +15,10 @@ public abstract class Conta {
         this.numeroConta = numeroConta;
         // System.out.println("Estou criando uma conta. - construtor padrão do Java");
     }
-
-    void deposita(double valorDeposito) {
-        this.saldo += valorDeposito;
-    }
+    /*
+     * Deposita será implementado nas classes filhas: Poupança & Corrente
+     */
+    abstract void deposita(double valorDeposito);
 
     boolean saca(double valorSaque) {
         if (this.saldo >= valorSaque) {

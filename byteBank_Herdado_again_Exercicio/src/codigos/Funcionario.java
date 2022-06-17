@@ -1,16 +1,13 @@
 package codigos;
 
-public class Funcionario {
+public abstract class Funcionario {
 
     private String nome;
     private String cpf;
     private double salario;
 
-    // getBonificação
-
-    public double getBonificacao() {
-        return this.salario * 0.1;
-    }
+    // Método Abstrato para devolver a bonificação dos funcionários (objetos)
+    public abstract double getBonificacao();
 
     // Getters & Setters
 

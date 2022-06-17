@@ -7,6 +7,14 @@ public class ContaCorrente extends Conta {
     }
 
     @Override
+    void deposita(double valorDeposito) {
+        super.saldo += valorDeposito;
+    }
+
+    /*
+     * valor do saque mais 20 centavos (0.2) de taxa
+     */
+    @Override
     boolean saca(double valorSaque) {
         return super.saca(valorSaque + 0.2);
     }
