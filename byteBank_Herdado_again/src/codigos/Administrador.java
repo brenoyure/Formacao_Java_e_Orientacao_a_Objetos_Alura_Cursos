@@ -1,24 +1,17 @@
 package codigos;
 
-public class Gerente extends Funcionario implements Autenticavel {
+public class Administrador extends Funcionario implements Autenticavel {
 
     private int senha;
 
-    // Método (SobreEscrito) para devolver a Bonificação do Gerente
+    @Override
     double getBonificacao() {
-        /*
-         * Utilizamos o super.getBonificacao() para evitar
-         * repetição de código, caso a bonificação padrão mude.
-         */
-        System.out.println("Método Bonificação do Gerente");
-        return super.getSalario();
-
+        return 50;
     }
 
     @Override
     public void setSenha(int senha) {
         this.senha = senha;
-
     }
 
     @Override

@@ -6,11 +6,6 @@ public abstract class Funcionario {
     private String cpf;
     private double salario;
 
-    // Construtor padrão
-    public Funcionario() {
-
-    }
-
     /*
      * Método Abstrato para devolver a Bonificação dos Funcionários
      * Abstract é necessário pois não há método de bonificação padrão.

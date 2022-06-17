@@ -9,7 +9,7 @@ public class TesteGerente {
         g1.setNome("Marcos");
         g1.setCPF("170.774.234.32");
         g1.setSalario(5000.0);
-        g1.setSenha(2222);
+        //g1.setSenha(2222);
         
         System.out.println(g1.getNome());
         System.out.println(g1.getCPF());

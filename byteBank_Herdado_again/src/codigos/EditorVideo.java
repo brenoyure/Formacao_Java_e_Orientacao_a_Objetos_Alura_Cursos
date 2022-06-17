@@ -3,7 +3,7 @@ package codigos;
 public class EditorVideo extends Funcionario {
 
     public double getBonificacao() {
-        System.out.println("Méotodo Bonificação do Editor de Vídeo");
+        System.out.println("Método Bonificação do Editor de Vídeo");
         return 100;
     }
 
