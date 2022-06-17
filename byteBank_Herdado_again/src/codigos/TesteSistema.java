@@ -12,9 +12,13 @@ public class TesteSistema {
         admin1.setNome("Felipe");
         admin1.setSenha(2222);
 
+        Cliente cliente = new Cliente();
+        cliente.setSenha(2222);
+
         SistemaInterno si = new SistemaInterno();
         si.autentica(g);
         si.autentica(admin1);
+        si.autentica(cliente);
 
     }
 

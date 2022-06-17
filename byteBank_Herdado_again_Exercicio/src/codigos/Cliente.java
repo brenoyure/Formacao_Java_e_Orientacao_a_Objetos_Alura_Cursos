@@ -1,12 +1,8 @@
 package codigos;
 
-public class Gerente extends Funcionario implements Autenticavel {
+public class Cliente implements Autenticavel {
 
     private int senha;
-
-    public double getBonificacao() {
-        return super.getSalario();
-    }
 
     @Override
     public void setSenha(int senha) {
@@ -16,13 +12,12 @@ public class Gerente extends Funcionario implements Autenticavel {
     @Override
     public boolean autentica(int senha) {
         if (this.senha == senha) {
-            System.out.println("Usuário " + super.getNome() + " autenticado com sucesso.");
+            System.out.println("Cliente autenticado com sucesso.");
             return true;
         } else {
-            System.out.println("Falha na autenticação.");
+            System.out.println("Falha na autenticação do cliente.");
             return false;
         }
-
     }
 
 }
