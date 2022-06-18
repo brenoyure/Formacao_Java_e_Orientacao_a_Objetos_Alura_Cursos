@@ -2,7 +2,11 @@ package codigos;
 
 public class Gerente extends Funcionario implements Autenticavel {
 
-    private int senha;
+    private Autenticador autenticador;
+
+    public Gerente() {
+        this.autenticador = new Autenticador();
+    }
 
     // Método (SobreEscrito) para devolver a Bonificação do Gerente
     double getBonificacao() {
@@ -17,20 +21,12 @@ public class Gerente extends Funcionario implements Autenticavel {
 
     @Override
     public void setSenha(int senha) {
-        this.senha = senha;
-
+        this.autenticador.setSenha(senha);
     }
 
     @Override
     public boolean autentica(int senha) {
-        if (this.senha == senha) {
-            System.out.println("Usuário autenticado com sucesso.");
-            return true;
-        } else {
-            System.out.println("Falha na autenticação.");
-            return false;
-        }
-
+        return this.autenticador.autentica(senha);
     }
 
 }

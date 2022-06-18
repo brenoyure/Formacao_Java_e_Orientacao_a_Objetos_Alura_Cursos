@@ -2,23 +2,21 @@ package codigos;
 
 public class Cliente implements Autenticavel {
 
-    private int senha;
+    private Autenticador autenticador;
+
+    public Cliente() {
+        this.autenticador = new Autenticador();
+    }
 
     @Override
     public void setSenha(int senha) {
-        this.senha = senha;
+        this.autenticador.setSenha(senha);
 
     }
 
     @Override
     public boolean autentica(int senha) {
-        if (this.senha == senha) {
-            System.out.println("Autenticado com sucesso.");
-            return true;
-        } else {
-            System.out.println("Falha na autenticação.");
-            return false;
-        }
+        return this.autenticador.autentica(senha);
 
     }
 
