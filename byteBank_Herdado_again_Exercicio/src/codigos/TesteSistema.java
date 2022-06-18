@@ -10,7 +10,8 @@ public class TesteSistema {
         SistemaInterno si = new SistemaInterno();
         // si.autentica(g);
 
-        Autenticavel referencia = new Gerente();
+        Gerente referencia = new Gerente();
+        referencia.setNome("Eulírico palhaço");
         referencia.setSenha(2222);
         si.autentica(referencia);
 
