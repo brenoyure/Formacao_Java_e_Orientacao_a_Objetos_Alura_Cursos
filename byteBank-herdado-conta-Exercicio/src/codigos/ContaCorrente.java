@@ -1,6 +1,6 @@
 package codigos;
 
-public class ContaCorrente extends Conta {
+public class ContaCorrente extends Conta implements Tributavel {
 
     ContaCorrente(int agencia, int numeroConta) {
         super(agencia, numeroConta);
@@ -17,6 +17,11 @@ public class ContaCorrente extends Conta {
     @Override
     boolean saca(double valorSaque) {
         return super.saca(valorSaque + 0.2);
+    }
+
+    @Override
+    public double getValorImposto() {
+        return super.saldo * 0.01;
     }
 
 }

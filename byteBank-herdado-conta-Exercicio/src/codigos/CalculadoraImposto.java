@@ -1,16 +1,21 @@
 package codigos;
 
-public class CalculadoraImposto {
+public class CalculadoraImposto implements Tributavel {
 
-    private double totalImposto;
+    private double totalValorImposto;
 
+    /*
+     * Método registra para somar o valor do tributável ao total e dps devolver a
+     * soma no método get
+     */
     public void registra(Tributavel t) {
         double valor = t.getValorImposto();
-        this.totalImposto += valor;
+        this.totalValorImposto += valor;
     }
 
-    public double getTotalImposto() {
-        return this.totalImposto;
+    @Override
+    public double getValorImposto() {
+        return this.totalValorImposto;
     }
 
 }
