@@ -15,28 +15,23 @@ public abstract class Conta {
         this.numeroConta = numeroConta;
         // System.out.println("Estou criando uma conta. - construtor padrão do Java");
     }
+
     /*
      * Deposita será implementado nas classes filhas: Poupança & Corrente
      */
     abstract void deposita(double valorDeposito);
 
-    boolean saca(double valorSaque) {
-        if (this.saldo >= valorSaque) {
-            this.saldo -= valorSaque;
-            return true;
-        } else {
-            return false;
+    void saca(double valorSaque) throws SaldoInsuficienteException {
+        if (this.saldo < valorSaque) {
+            throw new SaldoInsuficienteException("Saldo Insuficiente." + "\n" + "Saldo: R$" + this.saldo
+                    + ", Valor do Saque: R$" + valorSaque + ".");
         }
+        this.saldo -= valorSaque;
     }
 
-    boolean transfere(Conta destino, double valorTransferencia) {
-        if (this.saca(valorTransferencia)) {
-            destino.deposita(valorTransferencia);
-            return true;
-        } else {
-            System.out.println("Saldo insuficiente, transferência entre contas, não realizada.");
-            return false;
-        }
+    void transfere(Conta destino, double valorTransferencia) throws SaldoInsuficienteException {
+        this.saca(valorTransferencia);
+        destino.deposita(valorTransferencia);
     }
 
     double getSaldo() {
