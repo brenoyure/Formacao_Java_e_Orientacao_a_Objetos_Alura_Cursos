@@ -9,10 +9,20 @@ public abstract class Conta {
     private static int total;
 
     Conta(int agencia, int numeroConta) {
-        Conta.total++;
+
         // System.out.println("O total de contas é " + Conta.total);
+
+        if (agencia < 1) {
+            throw new IllegalArgumentException("Número da Agência Inválido.");
+        }
+
+        if (numeroConta < 1) {
+            throw new IllegalArgumentException("Número da Conta Inválido.");
+        }
+
         this.agencia = agencia;
         this.numeroConta = numeroConta;
+        Conta.total++;
         // System.out.println("Estou criando uma conta. - construtor padrão do Java");
     }
 
