@@ -1,88 +1,172 @@
 package br.com.bytebank.banco.modelo;
 
+/**
+ * Classe abstrata que representa o modelo Conta do byteBank.
+ * 
+ * @author Breno Yuri
+ * @version 0.1
+ *          revisado por Thiago Vasconcelos
+ */
+
 public abstract class Conta {
 
-    protected double saldo;
-    private int agencia;
-    private int numeroConta;
-    private Cliente titular;
-    private static int total;
+	protected double saldo;
+	private int agencia;
+	private int numeroConta;
+	private Cliente titular;
+	private static int total;
 
-    protected Conta(int agencia, int numeroConta) {
+	/**
+	 * Construtor (protected) da classe Conta, recebe como parâmetros número da
+	 * agência e número da conta.
+	 * 
+	 * Caso nConta ou nAgência seja menor que 1, joga exceção ArgumentIllegal.
+	 * 
+	 * @param agencia
+	 * @param numeroConta
+	 * @exception IllegalArgumentException
+	 */
+	protected Conta(int agencia, int numeroConta) {
 
-        // System.out.println("O total de contas é " + Conta.total);
+		// System.out.println("O total de contas é " + Conta.total);
 
-        if (agencia < 1) {
-            throw new IllegalArgumentException("Número da Agência Inválido.");
-        }
+		if (agencia < 1) {
+			throw new IllegalArgumentException("Número da Agência Inválido.");
+		}
 
-        if (numeroConta < 1) {
-            throw new IllegalArgumentException("Número da Conta Inválido.");
-        }
+		if (numeroConta < 1) {
+			throw new IllegalArgumentException("Número da Conta Inválido.");
+		}
 
-        this.agencia = agencia;
-        this.numeroConta = numeroConta;
-        Conta.total++;
-        // System.out.println("Estou criando uma conta. - construtor padrão do Java");
-    }
+		this.agencia = agencia;
+		this.numeroConta = numeroConta;
+		Conta.total++;
+		// System.out.println("Estou criando uma conta. - construtor padrão do Java");
+	}
 
-    /*
-     * Deposita será implementado nas classes filhas: Poupança & Corrente
-     */
-    protected abstract void deposita(double valorDeposito);
+	/**
+	 * Método deposita será implementado nas subclasses: Poupança & Corrente
+	 */
+	protected abstract void deposita(double valorDeposito);
 
-    void saca(double valorSaque) throws SaldoInsuficienteException {
-        if (this.saldo < valorSaque) {
-            throw new SaldoInsuficienteException("Saldo Insuficiente." + "\n" + "Saldo: R$" + this.saldo
-                    + ", Valor do Saque: R$" + valorSaque + ".");
-        }
-        this.saldo -= valorSaque;
-    }
+	/**
+	 * Método Saca "lançará" uma exceção de Saldo Insuficiente, caso usuário passe,
+	 * como parâmetro, um valor de saque maior que o saldo atual.
+	 * 
+	 * @param valorSaque
+	 * @throws SaldoInsuficienteException
+	 */
+	public void saca(double valorSaque) throws SaldoInsuficienteException {
+		if (this.saldo < valorSaque) {
+			throw new SaldoInsuficienteException("Saldo Insuficiente." + "\n" + "Saldo atual: R$" + this.saldo
+					+ ", Valor do Saque: R$" + valorSaque + ".");
+		} else {
+			this.saldo -= valorSaque;
+		}
 
-    public void transfere(Conta destino, double valorTransferencia) throws SaldoInsuficienteException {
-        this.saca(valorTransferencia);
-        destino.deposita(valorTransferencia);
-    }
+	}
 
-    public double getSaldo() {
-        return this.saldo;
-    }
+	/**
+	 * Método de Transferência: recebe como parâmetros a contaDestino(Objeto) e um
+	 * double valorTransferência. Este método "chama" o saca, e em seguida realiza o
+	 * depósito na conta destino.
+	 * 
+	 * @param destino
+	 * @param valorTransferencia
+	 * @throws SaldoInsuficienteException
+	 */
+	public void transfere(Conta destino, double valorTransferencia) {
+		try {
+			
+			if (this.saldo >= valorTransferencia) {
+				this.saca(valorTransferencia);
+				destino.deposita(valorTransferencia);
+			}
+		} catch (SaldoInsuficienteException e) {
+			System.out.println("Saldo insuficiente, transferência não realizada." + "\n" +
+					"Saldo: R$" + this.saldo + ", Valor do Saque: R$" + valorTransferencia + ".");
+		}
+	}
 
-    int getNumeroConta() {
-        return this.numeroConta;
-    }
+	/**
+	 * Método getSaldo para devolver o saldo de uma conta.
+	 * 
+	 * @return
+	 */
+	public double getSaldo() {
+		return this.saldo;
+	}
 
-    void setNumeroConta(int novoNumeroConta) {
-        if (novoNumeroConta <= 0) {
-            System.out.println("Náo é possível definir valor menor ou igual a zero");
-            return;
-        }
-        this.numeroConta = novoNumeroConta;
-    }
+	/**
+	 * Método para retornar o número de uma conta.
+	 * 
+	 * @return
+	 */
+	int getNumeroConta() {
+		return this.numeroConta;
+	}
 
-    int getAgencia() {
-        return this.agencia;
-    }
+	/**
+	 * Método setNumeroConta que define o número da conta.
+	 * 
+	 * @param novoNumeroConta
+	 */
+	void setNumeroConta(int novoNumeroConta) {
+		if (novoNumeroConta < 1) {
+			throw new IllegalArgumentException("Número de Conta inválido.");
+		}
+		this.numeroConta = novoNumeroConta;
+	}
 
-    void setAgencia(int numeroAgencia) {
-        if (agencia <= 0) {
-            System.out.println("Não pode valor menor ou igual a zero");
-            return;
-        }
+	/**
+	 * Método para devolver o número da agência.
+	 * 
+	 * @return
+	 */
+	int getAgencia() {
+		return this.agencia;
+	}
 
-        this.agencia = numeroAgencia;
-    }
+	/**
+	 * Método para definir/alterar número da agência
+	 * 
+	 * @param numeroAgencia
+	 */
+	void setAgencia(int numeroAgencia) {
+		if (agencia < 1) {
+			throw new IllegalArgumentException("Número de Agência Inválido.");
+		}
 
-    void setTitular(Cliente titular) {
-        this.titular = titular;
-    }
+		this.agencia = numeroAgencia;
+	}
 
-    Cliente getTitular() {
-        return this.titular;
-    }
+	/**
+	 * Método para devolver definir/alterar o titular (tipo Cliente) da conta.
+	 * 
+	 * @param titular
+	 */
+	void setTitular(Cliente titular) {
+		this.titular = titular;
+	}
 
-    static int getTotal() {
-        return Conta.total;
-    }
+	/**
+	 * Método para devolver o titular da conta, com métodos, por exemplo: ver Nome->
+	 * titular.getNome
+	 * 
+	 * @return
+	 */
+	Cliente getTitular() {
+		return this.titular;
+	}
+
+	/**
+	 * Método estático que retorna a quantidade de contas criadas no byteBank. obs:
+	 * Esse valor aumenta a medida que um construtor novo é chamado
+	 * 
+	 * @return
+	 */
+	static int getTotal() {
+		return Conta.total;
+	}
 
 }

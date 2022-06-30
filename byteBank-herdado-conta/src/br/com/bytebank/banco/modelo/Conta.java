@@ -1,5 +1,14 @@
 package br.com.bytebank.banco.modelo;
 
+/**
+ * 
+ * Classe abstrata que representa um modelo de Conta do byteBank
+ * 
+ * @author Breno
+ * 
+ *
+ */
+
 public abstract class Conta {
 
     protected double saldo;
@@ -8,6 +17,16 @@ public abstract class Conta {
     private Cliente titular;
     private static int total;
 
+    /**
+     * 
+     * Construtor para inicializar o objeto Conta.
+     * A partir dos parâmentros agencia e número de conta
+     * 
+     * @param agencia
+     * @param numeroConta
+     * 
+     */
+    
     public Conta(int agencia, int numeroConta) {
         Conta.total++;
         // System.out.println("O total de contas é " + Conta.total);
@@ -16,8 +35,22 @@ public abstract class Conta {
         // System.out.println("Estou criando uma conta. - construtor padrão do Java");
     }
 
+    /**
+     * Método abstrato deposita, que recebe um double valorDeposito como parâmetro.
+     * 
+     * @param valorDeposito
+     */
+    
     public abstract void deposita(double valorDeposito);
 
+    /**
+     * Método saca que recebe um double, que será subtraído do saldo,
+     * caso o saldo seja igual ou maior que o valor do saque.
+     * Saca, lançará uma exception do tipo Saldo Insuficiente caso o contrário.
+     * 
+     * @param valorSaque
+     * @throws SaldoInsuficienteException      
+     */
     public void saca(double valorSaque) throws SaldoInsuficienteException {
         if (this.saldo < valorSaque) {
             throw new SaldoInsuficienteException("Saldo: R$" + this.saldo + ", Valor do Saque: R$" + valorSaque);

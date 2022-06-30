@@ -18,7 +18,9 @@ public class ContaCorrente extends Conta implements Tributavel {
     public void saca(double valorSaque) {
         double valorAsacar = valorSaque + 0.2;
         try {
-            super.saca(valorAsacar);
+            if (super.saldo >= valorAsacar) {
+                super.saca(valorAsacar);
+            }
         } catch (SaldoInsuficienteException ex) {
             System.out.println(ex.getMessage());
         }
