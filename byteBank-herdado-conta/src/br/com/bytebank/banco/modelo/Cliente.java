@@ -20,11 +20,11 @@ public class Cliente {
         return nome;
     }
 
-    void setNome(String nome) {
+    public void setNome(String nome) {
         this.nome = nome;
     }
 
-    String getCpf() {
+    protected String getCpf() {
         return cpf;
     }
 

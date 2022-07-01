@@ -13,9 +13,13 @@ public class TesteContas {
         cp.deposita(100.0);
 
         cc.transfere(cp, 100);
+        
+        /**
+         * Método CP
+         */
 
-        System.out.println("CC: " + cc.getSaldo());
-        System.out.println("CP: " + cp.getSaldo());
+        System.out.println("Método CC: " + cc.getSaldo());
+        System.out.println("Método CP: " + cp.getSaldo());
 
         /*
          * 
