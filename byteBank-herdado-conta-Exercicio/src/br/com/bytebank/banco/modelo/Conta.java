@@ -77,9 +77,8 @@ public abstract class Conta {
 	 */
 	public void transfere(Conta destino, double valorTransferencia) {
 		try {
-			
+			this.saca(valorTransferencia);
 			if (this.saldo >= valorTransferencia) {
-				this.saca(valorTransferencia);
 				destino.deposita(valorTransferencia);
 			}
 		} catch (SaldoInsuficienteException e) {
