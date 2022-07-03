@@ -26,7 +26,7 @@ public abstract class Conta {
      * @param numeroConta
      * 
      */
-    
+
     public Conta(int agencia, int numeroConta) {
         Conta.total++;
         // System.out.println("O total de contas é " + Conta.total);
@@ -40,7 +40,7 @@ public abstract class Conta {
      * 
      * @param valorDeposito
      */
-    
+
     public abstract void deposita(double valorDeposito);
 
     /**
@@ -49,7 +49,7 @@ public abstract class Conta {
      * Saca, lançará uma exception do tipo Saldo Insuficiente caso o contrário.
      * 
      * @param valorSaque
-     * @throws SaldoInsuficienteException      
+     * @throws SaldoInsuficienteException
      */
     public void saca(double valorSaque) throws SaldoInsuficienteException {
         if (this.saldo < valorSaque) {
@@ -102,6 +102,11 @@ public abstract class Conta {
 
     static int getTotal() {
         return Conta.total;
+    }
+
+    @Override
+    public String toString() {
+        return "Número: " + this.getNumeroConta() + ", Agência: " + this.getAgencia();
     }
 
 }

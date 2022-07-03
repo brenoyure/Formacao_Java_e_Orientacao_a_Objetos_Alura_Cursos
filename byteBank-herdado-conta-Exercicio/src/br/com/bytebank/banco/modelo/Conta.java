@@ -1,11 +1,12 @@
 package br.com.bytebank.banco.modelo;
 
 /**
- * Classe abstrata que representa o modelo Conta do byteBank.
+ * pt-br {Classe Abstrata que representa o modelo Conta do byteBank.)
+ * en-us {Abstract Class that represents byteBank's Account model.)
  * 
  * @author Breno Yuri
- * @version 0.1
- *          revisado por Thiago Vasconcelos
+ * @version 0.2
+ * @implNote added toString() method at line 172.
  */
 
 public abstract class Conta {
@@ -160,12 +161,17 @@ public abstract class Conta {
 
 	/**
 	 * Método estático que retorna a quantidade de contas criadas no byteBank. obs:
-	 * Esse valor aumenta a medida que um construtor novo é chamado
+	 * Esse valor aumenta a medida que um novo construtor é chamado.
 	 * 
 	 * @return
 	 */
 	static int getTotal() {
 		return Conta.total;
+	}
+
+	@Override
+	public String toString() {
+		return "Nº da Conta: " + this.getNumeroConta() + ", Agência: " + this.getAgencia() + ".";
 	}
 
 }

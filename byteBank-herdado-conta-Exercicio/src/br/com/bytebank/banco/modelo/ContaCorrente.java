@@ -2,6 +2,14 @@ package br.com.bytebank.banco.modelo;
 
 public class ContaCorrente extends Conta implements Tributavel {
 
+    /**
+     * Class ContaCorrent inherited from Abstract Conta
+     * toString() method added in line 42.
+     * 
+     * @param agencia
+     * @param numeroConta
+     */
+
     public ContaCorrente(int agencia, int numeroConta) {
         super(agencia, numeroConta);
     }
@@ -29,6 +37,11 @@ public class ContaCorrente extends Conta implements Tributavel {
     @Override
     public double getValorImposto() {
         return super.saldo * 0.01;
+    }
+
+    @Override
+    public String toString() {
+        return "ContaCorrente: " + super.toString();
     }
 
 }

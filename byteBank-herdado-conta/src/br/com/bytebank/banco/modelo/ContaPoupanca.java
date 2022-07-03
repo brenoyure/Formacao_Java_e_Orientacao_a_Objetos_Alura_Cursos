@@ -13,7 +13,11 @@ public class ContaPoupanca extends Conta {
     @Override
     public void deposita(double valorDeposito) {
         this.saldo += valorDeposito;
+    }
 
+    @Override
+    public String toString() {
+        return "ContaPoupanca: " + super.toString();
     }
 
 }
