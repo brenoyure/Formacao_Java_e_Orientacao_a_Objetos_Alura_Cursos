@@ -67,7 +67,7 @@ public abstract class Conta {
         return this.saldo;
     }
 
-    int getNumeroConta() {
+    public int getNumeroConta() {
         return this.numeroConta;
     }
 
@@ -79,7 +79,7 @@ public abstract class Conta {
         this.numeroConta = novoNumeroConta;
     }
 
-    int getAgencia() {
+    public int getAgencia() {
         return this.agencia;
     }
 
@@ -96,11 +96,11 @@ public abstract class Conta {
         this.titular = titular;
     }
 
-    Cliente getTitular() {
+    protected Cliente getTitular() {
         return this.titular;
     }
 
-    static int getTotal() {
+    protected static int getTotal() {
         return Conta.total;
     }
 

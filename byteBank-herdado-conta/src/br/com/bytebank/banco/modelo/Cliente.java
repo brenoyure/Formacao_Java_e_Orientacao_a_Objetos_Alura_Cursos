@@ -16,7 +16,7 @@ public class Cliente {
     private String cpf;
     private String profissao;
 
-    String getNome() {
+    public String getNome() {
         return nome;
     }
 

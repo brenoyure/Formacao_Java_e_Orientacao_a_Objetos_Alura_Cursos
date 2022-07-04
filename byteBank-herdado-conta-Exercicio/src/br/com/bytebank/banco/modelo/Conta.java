@@ -102,7 +102,7 @@ public abstract class Conta {
 	 * 
 	 * @return
 	 */
-	int getNumeroConta() {
+	public int getNumeroConta() {
 		return this.numeroConta;
 	}
 
@@ -123,7 +123,7 @@ public abstract class Conta {
 	 * 
 	 * @return
 	 */
-	int getAgencia() {
+	public int getAgencia() {
 		return this.agencia;
 	}
 
