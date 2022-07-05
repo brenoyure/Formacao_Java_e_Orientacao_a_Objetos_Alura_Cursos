@@ -4,25 +4,30 @@ import br.com.bytebank.banco.modelo.*;
 
 public class TesteArrayReferencias {
 
-    public static void main(String[] args) {
+	public static void main(String[] args) {
 
-        Object[] referencias = new Object[5];
+		Object[] referencias = new Object[5];
 
-        ContaCorrente cc1 = new ContaCorrente(22, 11);
-        referencias[0] = cc1;
+		System.out.println("Tamanho do Array: " + referencias.length);
 
-        ContaPoupanca cc2 = new ContaPoupanca(22, 22);
-        referencias[1] = cc2;
+		ContaCorrente cc1 = new ContaCorrente(22, 11);
+		referencias[0] = cc1;
 
-        Cliente cliente = new Cliente();
-        referencias[2] = cliente;
+		// Criando a(o) referência(objeto) cc2 do tipo ContaPoupança
+		ContaPoupanca cc2 = new ContaPoupanca(22, 22);
 
-        System.out.println(((ContaPoupanca) referencias[1]).getNumeroConta());
+		// posição 1 recebe cc2, que é do tipo ContaPoupança
+		referencias[1] = cc2;
 
-        ContaPoupanca ref = (ContaPoupanca) referencias[1];
-        System.out.println(cc2.getNumeroConta());
-        System.out.println(ref.getNumeroConta());
+		Cliente cliente = new Cliente();
+		referencias[2] = cliente;
 
-    }
+		ContaPoupanca ref = (ContaPoupanca) referencias[1];
+
+		System.out.println(((ContaPoupanca)referencias[1]).getNumeroConta());
+		System.out.println(cc2.getNumeroConta());
+		System.out.println(ref.getNumeroConta());
+
+	}
 
 }

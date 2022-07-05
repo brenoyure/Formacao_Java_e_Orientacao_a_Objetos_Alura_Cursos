@@ -73,7 +73,7 @@ public abstract class Conta {
 
     void setNumeroConta(int novoNumeroConta) {
         if (novoNumeroConta <= 0) {
-            System.out.println("Náo é possível definir valor menor ou igual a zero");
+            System.out.println("Não é possível definir valor menor ou igual a zero");
             return;
         }
         this.numeroConta = novoNumeroConta;
