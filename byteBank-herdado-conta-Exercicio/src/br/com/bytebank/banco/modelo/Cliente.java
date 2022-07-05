@@ -13,27 +13,27 @@ public class Cliente {
 	private String cpf;
 	private String profissao;
 
-	String getNome() {
+	public String getNome() {
 		return nome;
 	}
 
-	void setNome(String nome) {
+	public void setNome(String nome) {
 		this.nome = nome;
 	}
 
-	String getCpf() {
+	public String getCpf() {
 		return cpf;
 	}
 
-	void setCpf(String cpf) {
+	public void setCpf(String cpf) {
 		this.cpf = cpf;
 	}
 
-	String getProfissao() {
+	public String getProfissao() {
 		return profissao;
 	}
 
-	void setProfissao(String profissao) {
+	public void setProfissao(String profissao) {
 		this.profissao = profissao;
 	}
 

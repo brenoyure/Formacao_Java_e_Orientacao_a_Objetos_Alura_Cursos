@@ -18,7 +18,11 @@ public class TesteGuardadorContas {
         Conta cp = new ContaPoupanca(11, 44);
         guardador.adiciona(cp);
 
-        
+
+        Conta ref = guardador.getReferencia(0);
+
+        System.out.println(ref.getNumeroConta());
+
 
     }
 

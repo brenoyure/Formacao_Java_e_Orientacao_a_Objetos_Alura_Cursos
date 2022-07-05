@@ -145,7 +145,7 @@ public abstract class Conta {
 	 * 
 	 * @param titular
 	 */
-	void setTitular(Cliente titular) {
+	public void setTitular(Cliente titular) {
 		this.titular = titular;
 	}
 
@@ -155,7 +155,7 @@ public abstract class Conta {
 	 * 
 	 * @return
 	 */
-	Cliente getTitular() {
+	public Cliente getTitular() {
 		return this.titular;
 	}
 

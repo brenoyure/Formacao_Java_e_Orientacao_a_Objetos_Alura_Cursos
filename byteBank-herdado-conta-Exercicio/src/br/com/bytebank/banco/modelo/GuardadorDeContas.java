@@ -18,6 +18,10 @@ public class GuardadorDeContas {
         this.posicoesLivre--;
     }
 
+    public Conta getReferencia(int posicaoNoGuardador) {
+        return this.referencias[posicaoNoGuardador];
+    }
+
     @Override
     public String toString() {
         return "Guardador de Contas: " + "Posições: " + referencias.length + ", Livres: " + this.posicoesLivre
