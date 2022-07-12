@@ -9,15 +9,14 @@ public class TesteArrayReferencias {
 		Conta[] contas = new Conta[5];
 
 		ContaCorrente cc1 = new ContaCorrente(22, 11);
+		ContaCorrente cc2 = new ContaCorrente(22, 22);
+
 		contas[0] = cc1;
+		contas[1] = cc2;
+		Conta ref = (ContaCorrente) contas[0];
 
-		ContaPoupanca cp1 = new ContaPoupanca(22, 22);
-		contas[1] = cp1;
-
-		System.out.println(cp1.getNumeroConta());
-
-		ContaCorrente ref = (ContaCorrente) contas[0];
-		System.out.println(cp1.getNumeroConta());
+		System.out.println(contas[1].getNumeroConta());
+		System.out.println(cc2.getNumeroConta());
 		System.out.println(ref.getNumeroConta());
 
 	}

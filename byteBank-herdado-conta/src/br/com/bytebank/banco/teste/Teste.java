@@ -1,25 +1,28 @@
 package br.com.bytebank.banco.teste;
 
+import br.com.bytebank.banco.especial.ContaEspecial;
 import br.com.bytebank.banco.modelo.*;
 
 public class Teste {
 
     public static void main(String[] args) {
 
-        Guardador_de_Contas guardador = new Guardador_de_Contas();
+        Guardador_de_Contas guardador = new Guardador_de_Contas(-2);
 
-        Conta cc = new ContaCorrente(22, 11);
-        guardador.adiciona(cc);
+        Conta conta1 = new ContaCorrente(111, 222);
+        Conta conta2 = new ContaPoupanca(111, 223);
+        Conta conta3 = new ContaCorrente(112, 224);
+        Conta conta4 = new ContaEspecial(223, 347);
 
-        Conta cc2 = new ContaCorrente(22, 22);
-        guardador.adiciona(cc2);
-
-        int tamanho = guardador.getQuantidadeElementos();
-        System.out.println("Tamanho do Guardador: " + tamanho);
-
-        Conta ref = guardador.getReferencia(0);
-
-        System.out.println(ref);
+        //System.out.println(guardador.toString());
+        guardador.adiciona(conta1);
+        //System.out.println(guardador.toString());
+        guardador.adiciona(conta2);
+        //System.out.println(guardador.toString());
+        guardador.adiciona(conta3);
+        //System.out.println(guardador.toString());
+        guardador.adiciona(conta4);
+        //System.out.println(guardador.toString());
 
     }
 
