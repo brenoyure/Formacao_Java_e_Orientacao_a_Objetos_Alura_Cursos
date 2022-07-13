@@ -1,14 +1,14 @@
 package br.com.bytebank.banco.modelo;
 
-public class Guardador_de_Contas {
+public class Guardador_de_Referencias {
 
-    private Conta[] referencias;
+    private Object[] referencias;
     private int posicao;
     private int tamanho;
     private int posicoesLivres;
 
     /**
-     * Construtor do Guardador de Contas
+     * Construtor do Guardador de Objects
      * 
      * @param posicao        retorna a posição atual no vetor.
      * @param tamanho        retorna o tamanho do vetor.
@@ -16,9 +16,9 @@ public class Guardador_de_Contas {
      *                       vetor, e subtrai um a cada elemento adicionado ao
      *                       vetor.
      */
-    public Guardador_de_Contas(int tamanho) {
+    public Guardador_de_Referencias(int tamanho) {
         try {
-            this.referencias = new Conta[tamanho];
+            this.referencias = new Object[tamanho];
             this.posicao = 0;
             this.tamanho = referencias.length;
             this.posicoesLivres = referencias.length;
@@ -28,18 +28,18 @@ public class Guardador_de_Contas {
         }
     }
 
-    public Guardador_de_Contas() {
+    public Guardador_de_Referencias() {
 
     }
 
     /**
-     * Método adiciona contas, recebe uma referência do tipo Conta
+     * Método adiciona Objects, recebe uma referência do tipo Object
      * 
-     * @param ref_tipo_Conta
+     * @param ref_tipo_Object
      */
-    public boolean adiciona(Conta ref_tipo_Conta) {
+    public boolean adiciona(Object ref_tipo_Object) {
         try {
-            this.referencias[this.posicao] = ref_tipo_Conta;
+            this.referencias[this.posicao] = ref_tipo_Object;
             this.posicao++;
             this.posicoesLivres--;
             return true;
@@ -47,7 +47,7 @@ public class Guardador_de_Contas {
             System.err.println("Não há mais posições livres no Array. Tente aumentar o tamanho no constutor.");
             return false;
         } catch (NullPointerException nullException) {
-            System.err.println("Usuário está tentando adicionar uma Conta num array null.");
+            System.err.println("Usuário está tentando adicionar um Object num array null.");
             return false;
         }
     }
@@ -69,13 +69,13 @@ public class Guardador_de_Contas {
         return this.posicao;
     }
 
-    public Conta getReferencia(int posicao) {
+    public Object getReferencia(int posicao) {
         return this.referencias[posicao];
     }
 
     @Override
     public String toString() {
-        return "Guardador de Contas => Posições: " + this.getTamanho() + ", Ocupadas: " + this.getPosicao()
+        return "Guardador de Referências => Posições: " + this.getTamanho() + ", Ocupadas: " + this.getPosicao()
                 + ", Livres: " + this.getPosicoesLivres();
     }
 

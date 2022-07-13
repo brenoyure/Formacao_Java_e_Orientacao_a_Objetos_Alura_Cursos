@@ -1,0 +1,84 @@
+{
+    // Use o IntelliSense para saber mais sobre os atributos possíveis.
+    // Focalizar para exibir as descrições dos atributos existentes.
+    // Para obter mais informações, acesse: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Launch Teste",
+            "request": "launch",
+            "mainClass": "br.com.bytebank.banco.teste.util.Teste",
+            "projectName": "byteBank-herdado-conta"
+        },
+        {
+            "type": "java",
+            "name": "Launch Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Launch Teste",
+            "request": "launch",
+            "mainClass": "br.com.bytebank.banco.teste.Teste",
+            "projectName": "byteBank-herdado-conta"
+        },
+        {
+            "type": "java",
+            "name": "Launch TesteArrayPrimitivos",
+            "request": "launch",
+            "mainClass": "br.com.bytebank.banco.teste.TesteArrayPrimitivos",
+            "projectName": "byteBank-herdado-conta"
+        },
+        {
+            "type": "java",
+            "name": "Launch TesteArrayReferencias",
+            "request": "launch",
+            "mainClass": "br.com.bytebank.banco.teste.TesteArrayReferencias",
+            "projectName": "byteBank-herdado-conta"
+        },
+        {
+            "type": "java",
+            "name": "Launch TesteArrayString",
+            "request": "launch",
+            "mainClass": "br.com.bytebank.banco.teste.TesteArrayString",
+            "projectName": "byteBank-herdado-conta"
+        },
+        {
+            "type": "java",
+            "name": "Launch TesteContas",
+            "request": "launch",
+            "mainClass": "br.com.bytebank.banco.teste.TesteContas",
+            "projectName": "byteBank-herdado-conta"
+        },
+        {
+            "type": "java",
+            "name": "Launch TesteObject",
+            "request": "launch",
+            "mainClass": "br.com.bytebank.banco.teste.TesteObject",
+            "projectName": "byteBank-herdado-conta"
+        },
+        {
+            "type": "java",
+            "name": "Launch TesteSaca",
+            "request": "launch",
+            "mainClass": "br.com.bytebank.banco.teste.TesteSaca",
+            "projectName": "byteBank-herdado-conta"
+        },
+        {
+            "type": "java",
+            "name": "Launch TesteString",
+            "request": "launch",
+            "mainClass": "br.com.bytebank.banco.teste.TesteString",
+            "projectName": "byteBank-herdado-conta"
+        },
+        {
+            "type": "java",
+            "name": "Launch TesteTributaveis",
+            "request": "launch",
+            "mainClass": "br.com.bytebank.banco.teste.TesteTributaveis",
+            "projectName": "byteBank-herdado-conta"
+        }
+    ]
+}
