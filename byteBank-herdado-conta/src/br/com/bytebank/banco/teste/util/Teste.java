@@ -7,7 +7,8 @@ public class Teste {
 
     public static void main(String[] args) {
 
-        ArrayList lista = new ArrayList();
+        ArrayList lista = new ArrayList<Conta>();
+        //ArrayList lista1 = new ArrayList<Conta>();
 
         Conta cc = new ContaCorrente(22, 11);
         Conta cc2 = new ContaCorrente(22, 22);
@@ -31,6 +32,8 @@ public class Teste {
         for(int i = 0; i < lista.size(); i++) {
             System.out.println(lista.get(i));
         }
+
+        System.out.println("=======");
 
         for(Object o : lista) {
             System.out.println(o);

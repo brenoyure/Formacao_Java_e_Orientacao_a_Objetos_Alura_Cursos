@@ -8,7 +8,8 @@ public class TesteGuardadorObjects {
 
         GuardadorDeObjects guardador = new GuardadorDeObjects();
 
-    //  1. Criando referência do tipo CC, atribuindo o cliente e guardando no guardador
+        // 1. Criando referência do tipo CC, atribuindo o cliente e guardando no
+        // guardador
         Conta cc = new ContaCorrente(11, 22);
         Cliente clienteBreno = new Cliente();
         cc.setTitular(clienteBreno);
