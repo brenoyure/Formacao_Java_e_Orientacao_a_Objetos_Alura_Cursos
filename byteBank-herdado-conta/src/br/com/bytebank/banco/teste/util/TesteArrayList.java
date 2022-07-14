@@ -3,7 +3,7 @@ package br.com.bytebank.banco.teste.util;
 import java.util.ArrayList;
 import br.com.bytebank.banco.modelo.*;
 
-public class Teste {
+public class TesteArrayList {
 
 	public static void main(String[] args) {
 

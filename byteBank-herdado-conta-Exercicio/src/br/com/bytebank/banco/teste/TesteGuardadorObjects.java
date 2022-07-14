@@ -15,6 +15,7 @@ public class TesteGuardadorObjects {
         cc.setTitular(clienteBreno);
         clienteBreno.setNome("Breno Yuri");
         clienteBreno.setProfissao("Suporte TI");
+
         guardador.adiciona(cc);
 
         Conta cp = new ContaPoupanca(11, 44);
