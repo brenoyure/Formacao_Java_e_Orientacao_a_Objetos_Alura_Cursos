@@ -1,6 +1,6 @@
 package br.com.bytebank.banco.teste.util;
 
-import java.util.ArrayList;
+// import java.util.ArrayList;
 import br.com.bytebank.banco.modelo.*;
 
 public class TesteArrayListEquals {
@@ -9,11 +9,10 @@ public class TesteArrayListEquals {
 
 		Conta cc1 = new ContaCorrente(22, 22);
 		Conta cc2 = new ContaCorrente(22, 22);
-		
-		boolean igual = cc1.ehIgual(cc2);
+
+		boolean igual = cc1.equals(cc2);
 		System.out.println(igual);
-		
-		
+
 //		ArrayList<Conta> lista = new ArrayList<>();
 //
 //		Conta cc = new ContaCorrente(22, 11);

@@ -4,8 +4,10 @@ package br.com.bytebank.banco.modelo;
  * 
  * Classe abstrata que representa um modelo de Conta do byteBank
  * 
- * @author Breno
- * 
+ * @author Breno Yuri
+ * @version 0.2
+ * @implNote método toString(), 
+ * @implNote método equals(), para comparar contas, adicionado à linha 117.
  *
  */
 
@@ -104,11 +106,20 @@ public abstract class Conta {
 		return Conta.total;
 	}
 
-	public boolean ehIgual(Conta outraConta) {
-		if (this.getAgencia() != outraConta.getAgencia()) {
+	/**
+	 * Método equals() sobrescrito, da super classe Object, utilizado para comparar
+	 * duas contas. Parâmetros de comparação: N° da Agência e Nº da Conta.
+	 * 
+	 * @param getAgencia()     retorna nº da agência.
+	 * @param getNumeroConta() retorna nº da conta.
+	 * 
+	 */
+	@Override
+	public boolean equals(Object ref) {
+		if (this.getAgencia() != ((Conta) ref).getAgencia()) {
 			return false;
 		}
-		if (this.getNumeroConta() != outraConta.getNumeroConta()) {
+		if (this.getNumeroConta() != ((Conta) ref).getNumeroConta()) {
 			return false;
 		}
 		return true;
