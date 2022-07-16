@@ -1,6 +1,6 @@
 package br.com.bytebank.banco.teste.util;
 
-import java.util.LinkedList;
+import java.util.ArrayList;
 import java.util.List;
 
 import br.com.bytebank.banco.modelo.*;
@@ -10,7 +10,7 @@ public class TesteArrayList {
 	public static void main(String[] args) {
 
 		// Generics = quando especificamos o tipo do ArrayList
-		List<Conta> lista = new LinkedList<>();
+		List<Conta> lista = new ArrayList<>();
 
 		Conta cc = new ContaCorrente(22, 11);
 		lista.add(cc);
