@@ -47,6 +47,7 @@ public class Cliente {
 		this.cpf = cpf;
 	}
 
+	@SuppressWarnings("unused")
 	private String getProfissao() {
 		return profissao;
 	}

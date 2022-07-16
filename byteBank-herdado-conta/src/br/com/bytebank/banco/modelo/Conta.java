@@ -6,7 +6,7 @@ package br.com.bytebank.banco.modelo;
  * 
  * @author Breno Yuri
  * @version 0.2
- * @implNote método toString(), 
+ * @implNote método toString(),
  * @implNote método equals(), para comparar contas, adicionado à linha 117.
  *
  */
@@ -115,16 +115,22 @@ public abstract class Conta {
 	 * 
 	 */
 	@Override
-	public boolean equals(Object ref) {
-		if (this.getAgencia() != ((Conta) ref).getAgencia()) {
+	public boolean equals(Object outraConta) {
+		if (this.getAgencia() != ((Conta) outraConta).getAgencia()) {
 			return false;
 		}
-		if (this.getNumeroConta() != ((Conta) ref).getNumeroConta()) {
+		if (this.getNumeroConta() != ((Conta) outraConta).getNumeroConta()) {
 			return false;
 		}
 		return true;
 	}
 
+	/**
+	 * toString() que devolve números da Agência e da Conta.
+	 * 
+	 * @param getAgencia()     retorna nº da agência.
+	 * @param getNumeroConta() retorna nº da conta.
+	 */
 	@Override
 	public String toString() {
 		return "Número: " + this.getNumeroConta() + ", Agência: " + this.getAgencia();

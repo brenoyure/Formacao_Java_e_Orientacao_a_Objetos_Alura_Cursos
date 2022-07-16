@@ -1,8 +1,8 @@
 package br.com.bytebank.banco.modelo;
 
 /**
- * pt-br {Classe Abstrata que representa o modelo Conta do byteBank.)
- * en-us {Abstract Class that represents byteBank's Account model.)
+ * pt-br {Classe Abstrata que representa o modelo Conta do byteBank.) en-us
+ * {Abstract Class that represents byteBank's Account model.)
  * 
  * @author Breno Yuri
  * @version 0.2
@@ -83,8 +83,8 @@ public abstract class Conta {
 				destino.deposita(valorTransferencia);
 			}
 		} catch (SaldoInsuficienteException e) {
-			System.out.println("Saldo insuficiente, transferência não realizada." + "\n" +
-					"Saldo: R$" + this.saldo + ", Valor do Saque: R$" + valorTransferencia + ".");
+			System.out.println("Saldo insuficiente, transferência não realizada." + "\n" + "Saldo: R$" + this.saldo
+					+ ", Valor do Saque: R$" + valorTransferencia + ".");
 		}
 	}
 
@@ -167,6 +167,14 @@ public abstract class Conta {
 	 */
 	static int getTotal() {
 		return Conta.total;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (obj == null)
+			return false;
+		Conta other = (Conta) obj;
+		return agencia == other.agencia && numeroConta == other.numeroConta;
 	}
 
 	@Override
