@@ -1,13 +1,16 @@
 package br.com.bytebank.banco.teste.util;
 
-import java.util.ArrayList;
+// import java.util.Collection;
+import java.util.List;
+// import java.util.ArrayList;
+import java.util.Vector;
 import br.com.bytebank.banco.modelo.*;
 
 public class TesteArrayList {
 
 	public static void main(String[] args) {
 
-		ArrayList<Conta> lista = new ArrayList<>();
+		List<Conta> lista = new Vector<>();
 
 		// Cliente cliente = new Cliente();
 		// lista.add(cliente);
