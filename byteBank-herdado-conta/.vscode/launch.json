@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch TesteArrayListEquals",
+            "request": "launch",
+            "mainClass": "br.com.bytebank.banco.teste.util.TesteArrayListEquals",
+            "projectName": "byteBank-herdado-conta"
+        },
+        {
+            "type": "java",
             "name": "Launch Teste",
             "request": "launch",
             "mainClass": "br.com.bytebank.banco.teste.util.Teste",
