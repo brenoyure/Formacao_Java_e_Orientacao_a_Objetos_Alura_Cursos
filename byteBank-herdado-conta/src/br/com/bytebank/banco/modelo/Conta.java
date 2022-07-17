@@ -94,11 +94,11 @@ public abstract class Conta {
 		this.agencia = numeroAgencia;
 	}
 
-	void setTitular(Cliente titular) {
+	public void setTitular(Cliente titular) {
 		this.titular = titular;
 	}
 
-	protected Cliente getTitular() {
+	public Cliente getTitular() {
 		return this.titular;
 	}
 
