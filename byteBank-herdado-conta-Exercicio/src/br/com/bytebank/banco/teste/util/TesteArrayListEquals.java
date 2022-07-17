@@ -18,7 +18,7 @@ public class TesteArrayListEquals {
 		System.out.println(igual);
 		
 		boolean contem = lista.contains(cc2);
-		System.out.println("Ja existe? "+ contem);
+		System.out.println("Já existe? "+ contem);
 		
 		for (Conta conta : lista) {
 			System.out.println(conta);
