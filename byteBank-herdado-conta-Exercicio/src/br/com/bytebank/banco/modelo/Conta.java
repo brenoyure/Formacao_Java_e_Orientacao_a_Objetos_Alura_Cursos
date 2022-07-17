@@ -5,11 +5,12 @@ package br.com.bytebank.banco.modelo;
  * {Abstract Class that represents byteBank's Account model.)
  * 
  * @author Breno Yuri
- * @version 0.2
- * @implNote added toString() method at line 172.
+ * @version 0.3
+ * @implNote added toString() at line 194.
+ * @implNote added equals() at line 170.
  */
 
-public abstract class Conta {
+public abstract class Conta implements Comparable<Conta> {
 
 	protected double saldo;
 	private int agencia;
@@ -31,12 +32,8 @@ public abstract class Conta {
 
 		// System.out.println("O total de contas é " + Conta.total);
 
-		if (agencia < 1) {
+		if (agencia < 1 || numeroConta < 1) {
 			throw new IllegalArgumentException("Número da Agência Inválido.");
-		}
-
-		if (numeroConta < 1) {
-			throw new IllegalArgumentException("Número da Conta Inválido.");
 		}
 
 		this.agencia = agencia;
@@ -177,9 +174,25 @@ public abstract class Conta {
 		return agencia == other.agencia && numeroConta == other.numeroConta;
 	}
 
+	/**
+	 * Comparação Natural utilizando o nome do titular para ordem.
+	 * 
+	 * @param conta
+	 * @return
+	 */
+	// @Override
+	// public int compareTo(Conta conta) {
+	// return this.getTitular().getNome().compareTo(conta.getTitular().getNome());
+	// }
+
+	@Override
+	public int compareTo(Conta outraConta) {
+		return Double.compare(this.getSaldo(), outraConta.getSaldo());
+	}
+
 	@Override
 	public String toString() {
-		return "Nº da Conta: " + this.getNumeroConta() + ", Agência: " + this.getAgencia() + ".";
+		return "Nº da Conta: " + this.getNumeroConta() + ", Agência: " + this.getAgencia() + ", Saldo: R$" + this.getSaldo();
 	}
 
 }

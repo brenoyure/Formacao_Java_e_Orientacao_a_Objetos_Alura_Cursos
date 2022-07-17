@@ -38,20 +38,22 @@ public class Teste {
         lista.add(cc4);
 
         for (Conta conta : lista) {
-            System.out.println(conta);
+            System.out.println(conta + ", " + conta.getTitular().getNome());
         }
 
-        lista.sort(new ComparadorNumeroConta());
+        // Collections.sort(lista, new ComparadorTitularDaConta());
+        lista.sort(null);
         System.out.println("-----");
 
         for (Conta conta : lista) {
-            System.out.println(conta);
+            System.out.println(conta + ", " + conta.getTitular().getNome());
         }
 
     }
 }
 
 class ComparadorTitularDaConta implements Comparator<Conta> {
+
     @Override
     public int compare(Conta conta1, Conta conta2) {
         String nomeCliente1 = conta1.getTitular().getNome();
@@ -64,9 +66,7 @@ class ComparadorNumeroConta implements Comparator<Conta> {
 
     @Override
     public int compare(Conta conta1, Conta conta2) {
-
         return Integer.compare(conta1.getNumeroConta(), conta2.getNumeroConta());
-
     }
 
 }
