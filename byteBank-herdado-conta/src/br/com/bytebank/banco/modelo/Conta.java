@@ -11,7 +11,7 @@ package br.com.bytebank.banco.modelo;
  *
  */
 
-public abstract class Conta {
+public abstract class Conta implements Comparable<Conta> {
 
 	protected double saldo;
 	private int agencia;
@@ -75,7 +75,7 @@ public abstract class Conta {
 
 	void setNumeroConta(int novoNumeroConta) {
 		if (novoNumeroConta <= 0) {
-			System.out.println("Não é possível definir valor menor ou igual a zero");
+			System.err.println("Não é possível definir valor menor ou igual a zero");
 			return;
 		}
 		this.numeroConta = novoNumeroConta;
@@ -87,7 +87,7 @@ public abstract class Conta {
 
 	void setAgencia(int numeroAgencia) {
 		if (agencia <= 0) {
-			System.out.println("Não pode valor menor ou igual a zero");
+			System.err.println("Não pode valor menor ou igual a zero");
 			return;
 		}
 
@@ -126,6 +126,18 @@ public abstract class Conta {
 	}
 
 	/**
+	 * Método compareTo() implementado para ordem natural da classe, baseada no
+	 * retorno do getSaldo().
+	 * 
+	 * @param outraConta
+	 * @return
+	 */
+	@Override
+	public int compareTo(Conta outraConta) {
+		return Double.compare(this.getSaldo(), outraConta.getSaldo());
+	}
+
+	/**
 	 * toString() que devolve números da Agência e da Conta.
 	 * 
 	 * @param getAgencia()     retorna nº da agência.
@@ -133,7 +145,7 @@ public abstract class Conta {
 	 */
 	@Override
 	public String toString() {
-		return "Número: " + this.getNumeroConta() + ", Agência: " + this.getAgencia();
+		return "Número: " + this.getNumeroConta() + ", Agência: " + this.getAgencia() + ", Saldo: R$" + this.getSaldo();
 	}
 
 }

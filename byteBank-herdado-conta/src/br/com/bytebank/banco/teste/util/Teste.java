@@ -1,9 +1,6 @@
 package br.com.bytebank.banco.teste.util;
 
-import java.util.List;
-import java.util.ArrayList;
-import java.util.Comparator;
-
+import java.util.*;
 import br.com.bytebank.banco.modelo.*;
 
 public class Teste {
@@ -41,51 +38,47 @@ public class Teste {
 		lista.add(cc4);
 
 		for (Conta conta : lista) {
-			System.out.println(conta);
+			System.out.println(conta + "Titular: " + conta.getTitular().getNome());
 		}
 
-		// lista.sort(new NumeroDaContaComparator());
-		lista.sort(new TitularContaComparator());
+		lista.sort(null);
 
-		System.out.println("----");
+		// Collections.sort(lista, new ComparadorNumeroConta());
+
+		System.out.println("------ lista.sort() --------");
 
 		for (Conta conta : lista) {
-			System.out.println(conta + ", " + conta.getTitular().getNome());
+			System.out.println(conta + ", Titular: " + conta.getTitular().getNome());
 		}
 
 	}
 
 }
 
-class TitularContaComparator implements Comparator<Conta> {
+class ComparadorTitularConta implements Comparator<Conta> {
+
+	/**
+	 * Compara as contas baseando-se na String do nome do titular
+	 * contaExemplo.getTitular().getNome();
+	 */
 
 	@Override
 	public int compare(Conta conta1, Conta conta2) {
-
 		String nomeCliente1 = conta1.getTitular().getNome();
 		String nomeCliente2 = conta2.getTitular().getNome();
-
 		return nomeCliente1.compareTo(nomeCliente2);
 	}
 
 }
 
-class NumeroDaContaComparator implements Comparator<Conta> {
-
+class ComparadorNumeroConta implements Comparator<Conta> {
+	/**
+	 * Compara as contas baseando-se no Número da Conta .getNumeroConta();
+	 */
 	@Override
-	public int compare(Conta c1, Conta c2) {
-
-		return Integer.compare(c1.getNumeroConta(), c2.getNumeroConta());
-
-//		if (c1.getNumeroConta() < c2.getNumeroConta()) {
-//			return -1;
-//		}
-//
-//		if (c1.getNumeroConta() > c2.getNumeroConta()) {
-//			return 1;
-//		}
-//
-//		return 0;
+	public int compare(Conta conta1, Conta conta2) {
+		return Integer.compare(conta1.getNumeroConta(), conta2.getNumeroConta());
+		// return conta1.getNumeroConta() - conta2.getNumeroConta();
 	}
 
 }

@@ -12,6 +12,7 @@ public class TesteWapperInteger {
 
 		// int idade = 29;
 
+		@SuppressWarnings({ "unused", "removal" })
 		Integer numeroRef = new Integer(29);
 
 		Integer idadeRef = Integer.valueOf("29");

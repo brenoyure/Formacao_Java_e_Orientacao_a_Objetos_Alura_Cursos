@@ -48,7 +48,7 @@ public abstract class Conta {
 	/**
 	 * Método deposita será implementado nas subclasses: Poupança & Corrente
 	 */
-	protected abstract void deposita(double valorDeposito);
+	public abstract void deposita(double valorDeposito);
 
 	/**
 	 * Método Saca "lançará" uma exceção de Saldo Insuficiente, caso usuário passe,
