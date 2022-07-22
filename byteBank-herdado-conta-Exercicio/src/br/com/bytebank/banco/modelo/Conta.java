@@ -187,12 +187,13 @@ public abstract class Conta implements Comparable<Conta> {
 
 	@Override
 	public int compareTo(Conta outraConta) {
-		return Double.compare(this.getSaldo(), outraConta.getSaldo());
+		return Double.compare(this.saldo, outraConta.saldo);
 	}
 
 	@Override
 	public String toString() {
-		return "Nº da Conta: " + this.getNumeroConta() + ", Agência: " + this.getAgencia() + ", Saldo: R$" + this.getSaldo();
+		return "Nº da Conta: " + this.getNumeroConta() + ", Agência: " + this.getAgencia() + ", Saldo: R$"
+				+ this.getSaldo();
 	}
 
 }

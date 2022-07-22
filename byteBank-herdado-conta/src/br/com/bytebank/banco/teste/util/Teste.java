@@ -1,7 +1,14 @@
 package br.com.bytebank.banco.teste.util;
 
-import java.util.*;
-import br.com.bytebank.banco.modelo.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
+
+import br.com.bytebank.banco.modelo.Cliente;
+import br.com.bytebank.banco.modelo.Conta;
+import br.com.bytebank.banco.modelo.ContaCorrente;
+import br.com.bytebank.banco.modelo.ContaPoupanca;
 
 public class Teste {
 
@@ -37,18 +44,20 @@ public class Teste {
 		lista.add(cc3);
 		lista.add(cc4);
 
+		// ComparadorNumeroConta comparadorNumeroConta = new ComparadorNumeroConta();
+		// ComparadorTitularConta comparadorTitularConta = new ComparadorTitularConta();
+
 		for (Conta conta : lista) {
-			System.out.println(conta + "Titular: " + conta.getTitular().getNome());
+			System.out.println(conta + conta.getTitular().getNome());
 		}
 
-		lista.sort(null);
-
-		// Collections.sort(lista, new ComparadorNumeroConta());
-
-		System.out.println("------ lista.sort() --------");
+		System.out.println("======");
+		// lista.sort(null);
+		// Utilizando o método estático sort() da classe Collections
+		Collections.rotate(lista, 2);
 
 		for (Conta conta : lista) {
-			System.out.println(conta + ", Titular: " + conta.getTitular().getNome());
+			System.out.println(conta + conta.getTitular().getNome());
 		}
 
 	}
@@ -56,29 +65,24 @@ public class Teste {
 }
 
 class ComparadorTitularConta implements Comparator<Conta> {
-
-	/**
-	 * Compara as contas baseando-se na String do nome do titular
-	 * contaExemplo.getTitular().getNome();
-	 */
-
 	@Override
 	public int compare(Conta conta1, Conta conta2) {
-		String nomeCliente1 = conta1.getTitular().getNome();
-		String nomeCliente2 = conta2.getTitular().getNome();
-		return nomeCliente1.compareTo(nomeCliente2);
+		return conta1.getTitular().getNome().compareTo(conta2.getTitular().getNome());
 	}
-
 }
 
 class ComparadorNumeroConta implements Comparator<Conta> {
-	/**
-	 * Compara as contas baseando-se no Número da Conta .getNumeroConta();
-	 */
 	@Override
-	public int compare(Conta conta1, Conta conta2) {
-		return Integer.compare(conta1.getNumeroConta(), conta2.getNumeroConta());
+	public int compare(Conta c1, Conta c2) {
+		return Integer.compare(c1.getNumeroConta(), c2.getNumeroConta());
+		// Como os nº das contas são inteiros, ao subtraí-los, retorna os respectivos
+		// valores de comparação.
 		// return conta1.getNumeroConta() - conta2.getNumeroConta();
+		// if (conta1.getNumeroConta() < conta2.getNumeroConta()) {
+		// return -1;
+		// } else if (conta1.getNumeroConta() == conta2.getNumeroConta()) {
+		// return 0;
+		// }
+		// return 1;
 	}
-
 }

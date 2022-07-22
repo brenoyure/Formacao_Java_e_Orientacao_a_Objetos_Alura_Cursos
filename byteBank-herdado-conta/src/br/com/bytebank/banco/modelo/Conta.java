@@ -125,16 +125,9 @@ public abstract class Conta implements Comparable<Conta> {
 		return true;
 	}
 
-	/**
-	 * Método compareTo() implementado para ordem natural da classe, baseada no
-	 * retorno do getSaldo().
-	 * 
-	 * @param outraConta
-	 * @return
-	 */
 	@Override
 	public int compareTo(Conta outraConta) {
-		return Double.compare(this.getSaldo(), outraConta.getSaldo());
+		return Double.compare(this.saldo, outraConta.saldo);
 	}
 
 	/**
