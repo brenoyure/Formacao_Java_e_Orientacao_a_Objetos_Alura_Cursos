@@ -1,7 +1,6 @@
 package br.com.bytebank.banco.teste.util;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
@@ -10,7 +9,7 @@ import br.com.bytebank.banco.modelo.Conta;
 import br.com.bytebank.banco.modelo.ContaCorrente;
 import br.com.bytebank.banco.modelo.ContaPoupanca;
 
-public class Teste {
+public class TesteClasseAnonima {
 
 	public static void main(String[] args) {
 
@@ -44,45 +43,26 @@ public class Teste {
 		lista.add(cc3);
 		lista.add(cc4);
 
-		// ComparadorNumeroConta comparadorNumeroConta = new ComparadorNumeroConta();
-		// ComparadorTitularConta comparadorTitularConta = new ComparadorTitularConta();
+		// Function Object -- objeto (classe) que encapsula uma função
+		// ComparadorNumeroConta2 comparadorNumeroConta = new ComparadorNumeroConta2();
+
+		lista.sort(new Comparator<Conta>() { // classe anônima
+			@Override
+			public int compare(Conta c1, Conta c2) {
+				return Integer.compare(c1.getNumeroConta(), c2.getNumeroConta());
+			}
+		});
+
+		Comparator<Conta> comp = new Comparator<Conta>() {
+			@Override
+			public int compare(Conta conta1, Conta conta2) {
+				return conta1.getTitular().getNome().compareTo(conta2.getTitular().getNome());
+			}
+		};
 
 		for (Conta conta : lista) {
 			System.out.println(conta + conta.getTitular().getNome());
 		}
 
-		System.out.println("======");
-		// lista.sort(null);
-		// Utilizando o método estático sort() da classe Collections
-		Collections.rotate(lista, 2);
-
-		for (Conta conta : lista) {
-			System.out.println(conta + conta.getTitular().getNome());
-		}
-
-	}
-
-}
-
-class ComparadorTitularConta implements Comparator<Conta> {
-	@Override
-	public int compare(Conta conta1, Conta conta2) {
-		return conta1.getTitular().getNome().compareTo(conta2.getTitular().getNome());
-	}
-}
-
-class ComparadorNumeroConta implements Comparator<Conta> {
-	@Override
-	public int compare(Conta c1, Conta c2) {
-		return Integer.compare(c1.getNumeroConta(), c2.getNumeroConta());
-		// Como os nº das contas são inteiros, ao subtraí-los, retorna os respectivos
-		// valores de comparação.
-		// return conta1.getNumeroConta() - conta2.getNumeroConta();
-		// if (conta1.getNumeroConta() < conta2.getNumeroConta()) {
-		// return -1;
-		// } else if (conta1.getNumeroConta() == conta2.getNumeroConta()) {
-		// return 0;
-		// }
-		// return 1;
 	}
 }

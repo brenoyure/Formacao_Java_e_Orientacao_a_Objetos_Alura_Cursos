@@ -10,7 +10,7 @@ import br.com.bytebank.banco.modelo.Conta;
 import br.com.bytebank.banco.modelo.ContaCorrente;
 import br.com.bytebank.banco.modelo.ContaPoupanca;
 
-public class Teste {
+public class TesteOrdenacao {
 
     public static void main(String[] args) {
 
@@ -53,7 +53,7 @@ public class Teste {
         // lista.sort(new TitularDaContaComparator());
 
         // Collections.sort(lista);
-        lista.sort(new TitularDaContaComparator());
+        lista.sort(new TitularDaContaComparator2());
 
         for (Conta conta : lista) {
             System.out.println(conta + ", " + conta.getTitular().getNome());
@@ -63,7 +63,7 @@ public class Teste {
 
 }
 
-class TitularDaContaComparator implements Comparator<Conta> {
+class TitularDaContaComparator2 implements Comparator<Conta> {
 
     @Override
     public int compare(Conta c1, Conta c2) {
@@ -72,7 +72,7 @@ class TitularDaContaComparator implements Comparator<Conta> {
 
 }
 
-class NumeroContaComparator implements Comparator<Conta> {
+class NumeroContaComparator2 implements Comparator<Conta> {
 
     @Override
     public int compare(Conta c1, Conta c2) {
