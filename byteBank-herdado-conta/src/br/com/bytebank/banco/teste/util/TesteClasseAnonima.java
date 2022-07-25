@@ -53,6 +53,7 @@ public class TesteClasseAnonima {
 			}
 		});
 
+		@SuppressWarnings("unused")
 		Comparator<Conta> comp = new Comparator<Conta>() {
 			@Override
 			public int compare(Conta conta1, Conta conta2) {
