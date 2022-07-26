@@ -1,0 +1,3 @@
+Escrevendo meu primeiro arquivo de texto com a ajuda do OutputStream do Java.
+
+Após isso, utilizaremos o InputStream para imprimir no console.

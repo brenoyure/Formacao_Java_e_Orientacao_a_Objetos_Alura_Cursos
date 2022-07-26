@@ -16,7 +16,7 @@ public class TesteLeitura {
         // <--throws FileNotFoundException
         // Dados binários para caractéres <-- InputStreamReader
         // Juntar os caracteres para leitura
-        InputStream fis = new FileInputStream("lorem.txt");
+        InputStream fis = new FileInputStream("lorem2.txt");
         Reader isr = new InputStreamReader(fis);
         BufferedReader br = new BufferedReader(isr);
 
