@@ -1,1 +1,2 @@
-Escrevendo meu primeiro arquivo de texto com a ajuda do OutputStream do Java.
+Usando o System.in como InputStream para escrever no arquivo lorem2.txt
+Escrevendo a segunda linha.
