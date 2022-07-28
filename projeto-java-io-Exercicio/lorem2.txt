@@ -1,2 +1,2 @@
-Usando o System.in como InputStream para escrever no arquivo lorem2.txt
-Escrevendo a segunda linha.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam
