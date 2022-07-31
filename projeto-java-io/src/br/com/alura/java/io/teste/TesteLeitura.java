@@ -17,7 +17,7 @@ public class TesteLeitura {
         // Dados binários para caractéres <-- InputStreamReader
         // Juntar os caracteres para leitura
         InputStream fis = new FileInputStream("lorem2.txt");
-        Reader isr = new InputStreamReader(fis);
+        Reader isr = new InputStreamReader(fis, "UTF-8");
         BufferedReader br = new BufferedReader(isr);
 
         for (String linha = br.readLine(); linha != null; linha = br.readLine()) {

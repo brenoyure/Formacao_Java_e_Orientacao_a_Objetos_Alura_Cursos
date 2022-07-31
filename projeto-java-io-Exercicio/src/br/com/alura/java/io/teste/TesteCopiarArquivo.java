@@ -18,12 +18,12 @@ public class TesteCopiarArquivo {
          * Usando o System.in como inputStream para receber a entrada do teclado.
          */
 
-        InputStream fis = System.in; //new FileInputStream("lorem.txt");
-        Reader isr = new InputStreamReader(fis);
+        InputStream fis = System.in; // new FileInputStream("lorem.txt");
+        Reader isr = new InputStreamReader(fis, "UTF-8");
         BufferedReader br = new BufferedReader(isr);
 
         OutputStream fos = System.out; // new FileOutputStream("lorem2.txt");
-        Writer osw = new OutputStreamWriter(fos);
+        Writer osw = new OutputStreamWriter(fos, "UTF-8");
         BufferedWriter bw = new BufferedWriter(osw);
 
         String linha = br.readLine();
