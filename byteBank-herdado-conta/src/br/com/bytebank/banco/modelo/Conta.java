@@ -1,5 +1,7 @@
 package br.com.bytebank.banco.modelo;
 
+import java.io.Serializable;
+
 /**
  * 
  * Classe abstrata que representa um modelo de Conta do byteBank
@@ -11,12 +13,12 @@ package br.com.bytebank.banco.modelo;
  *
  */
 
-public abstract class Conta implements Comparable<Conta> {
+public abstract class Conta implements Comparable<Conta>, Serializable {
 
 	protected double saldo;
 	private int agencia;
 	private int numeroConta;
-	private Cliente titular;
+	private Cliente titular; // <-- Se colocarmos transitent no Cliente, não vai ser gravado no .bin
 	private static int total;
 
 	/**

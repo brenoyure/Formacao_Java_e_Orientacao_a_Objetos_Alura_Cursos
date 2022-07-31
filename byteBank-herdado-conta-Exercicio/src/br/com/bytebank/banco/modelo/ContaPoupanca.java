@@ -3,6 +3,11 @@ package br.com.bytebank.banco.modelo;
 public class ContaPoupanca extends Conta {
 
     /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	/**
      * ContaPoupança herdando a classe abstrata Conta.
      * 
      * Método toString() adicionado na linha 23.

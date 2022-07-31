@@ -1,20 +1,17 @@
-package br.com.bytebank.banco.modelo;
+package br.com.alura.java.io.teste;
 
 import java.io.Serializable;
 
 /**
+ * Classe que representa um Cliente do byteBank.
  * 
- * Classe que representa um cliente no byteBank.
- * 
- * @author Breno Yuri
- * @version 0.2
- * @implNote toString() method added at line 43. <-- updated 31/07/2022
- * @implNote adicionados construtores (vazio, nome, completo) a partir da linha
- *           19.
- * @implNote adicionada a interface Serializable
+ * @author Breno
+ * @version 0.1
  */
 
 public class Cliente implements Serializable {
+
+	private static final long serialVersionUID = 1L;
 
 	private String nome;
 	private String cpf;
@@ -35,7 +32,7 @@ public class Cliente implements Serializable {
 	}
 
 	public String getNome() {
-		return this.nome;
+		return nome;
 	}
 
 	public void setNome(String nome) {

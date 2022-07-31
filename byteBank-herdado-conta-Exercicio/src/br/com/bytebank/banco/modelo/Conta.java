@@ -1,5 +1,7 @@
 package br.com.bytebank.banco.modelo;
 
+import java.io.Serializable;
+
 /**
  * pt-br {Classe Abstrata que representa o modelo Conta do byteBank.) en-us
  * {Abstract Class that represents byteBank's Account model.)
@@ -10,7 +12,9 @@ package br.com.bytebank.banco.modelo;
  * @implNote added equals() at line 170.
  */
 
-public abstract class Conta implements Comparable<Conta> {
+public abstract class Conta implements Comparable<Conta>, Serializable {
+
+	private static final long serialVersionUID = 1L;
 
 	protected double saldo;
 	private int agencia;
@@ -38,6 +42,33 @@ public abstract class Conta implements Comparable<Conta> {
 
 		this.agencia = agencia;
 		this.numeroConta = numeroConta;
+		Conta.total++;
+		// System.out.println("Estou criando uma conta. - construtor padrão do Java");
+	}
+
+	/**
+	 * Construtor (protected) da classe Conta, recebe como parâmetros número da
+	 * agência, número da conta e titular (tipo Cliente).
+	 * 
+	 * Caso nConta ou nAgência seja menor que 1, joga exceção ArgumentIllegal.
+	 * 
+	 * 
+	 * @param agencia
+	 * @param numeroConta
+	 * @param titular
+	 */
+
+	protected Conta(int agencia, int numeroConta, Cliente titular) {
+
+		// System.out.println("O total de contas é " + Conta.total);
+
+		if (agencia < 1 || numeroConta < 1) {
+			throw new IllegalArgumentException("Número da Agência Inválido.");
+		}
+
+		this.agencia = agencia;
+		this.numeroConta = numeroConta;
+		this.titular = titular;
 		Conta.total++;
 		// System.out.println("Estou criando uma conta. - construtor padrão do Java");
 	}
