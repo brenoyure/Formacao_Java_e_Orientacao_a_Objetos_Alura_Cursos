@@ -7,7 +7,4 @@ public class SeguroDeVida implements Tributavel {
         return 42;
     }
 
-
-
-
 }
