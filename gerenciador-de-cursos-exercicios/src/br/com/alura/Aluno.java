@@ -1,8 +1,6 @@
 package br.com.alura;
 
-import java.util.Objects;
-
-public class Aluno {
+public class Aluno implements Comparable<Aluno> {
 
 	private String nome;
 	private int numeroMatricula;
@@ -22,6 +20,11 @@ public class Aluno {
 		return numeroMatricula;
 	}
 
+	@Override
+	public int compareTo(Aluno outro) {
+		return this.nome.compareTo(outro.nome);
+	}
+	
 	@Override
 	public int hashCode() {
 		final int prime = 31;

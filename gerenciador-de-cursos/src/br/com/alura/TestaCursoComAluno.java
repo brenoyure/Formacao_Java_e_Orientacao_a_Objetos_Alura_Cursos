@@ -1,5 +1,8 @@
 package br.com.alura;
 
+import java.util.Iterator;
+import java.util.Set;
+
 public class TestaCursoComAluno {
 
 	public static void main(String[] args) {
@@ -19,23 +22,34 @@ public class TestaCursoComAluno {
 		javaColecoes.matricula(a3);
 		
 		System.out.println("Todos os alunos matriculados: ");
-		javaColecoes.getAlunos().forEach(aluno -> {
-			System.out.println(aluno);
-		});
+
+		Set<Aluno> alunos = javaColecoes.getAlunos();
 		
-		System.out.println("O aluno " + a1.getNome() + " está matriculado?");
-		System.out.println(javaColecoes.estaMatriculado(a1));
+		/**
+		 * Usando o Iterator para iterar pelos elementos da coleção
+		 */
+		Iterator<Aluno> iterador = alunos.iterator();	
+		while(iterador.hasNext()) {
+			System.out.println(iterador.next());
+		}
 		
-		
-		Aluno turini = new Aluno("Rodrigo Turini", 34672);
-		System.out.println("E esse turini, está matriculado?");
-		System.out.println(javaColecoes.estaMatriculado(turini));
-		
-		System.out.println("o a1 é equals o turini");
-		System.out.println(a1.equals(turini));
-		
-		System.out.println(a1.hashCode() == turini.hashCode());
-		
+//		System.out.println("O aluno " + a1.getNome() + " está matriculado?");
+//		System.out.println(javaColecoes.estaMatriculado(a1));
+//		
+//		
+//		Aluno turini = new Aluno("Rodrigo Turini", 34672);
+//		System.out.println("E esse turini, está matriculado?");
+//		System.out.println(javaColecoes.estaMatriculado(turini));
+//		
+//		System.out.println("o a1 é equals o turini");
+//		System.out.println(a1.equals(turini));
+//		
+//		System.out.println(a1.hashCode() + " <- hash code do a1");
+//		System.out.println(turini.hashCode() + " <- hash code do turini");
+//		
+//		System.out.println("O hashcode do a1 é igual ao do turini?");
+//		System.out.println(a1.hashCode() == turini.hashCode());
+//		
 		
 		
 		
