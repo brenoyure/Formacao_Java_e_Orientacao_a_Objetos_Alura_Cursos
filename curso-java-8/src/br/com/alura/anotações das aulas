@@ -1,0 +1,11 @@
+Aula 1 - Métodos Default para Interfaces, pós Java 8 {
+
+	Permite que adicionemos um novo método numa interface e que seja concreto* (possui um body), 
+	e que seja de certa forma herdado, por exemplo o método sort da interface List<T>.
+	
+	exemplo de assinatura, default void sort(Comparator<T> c) { //código do método, o body}
+
+	Esses métodos concretos, podem chamar métodos estáticos de outras classes, 
+	ou do próprio objeto, ou do que foi passado como argumento.
+
+}
