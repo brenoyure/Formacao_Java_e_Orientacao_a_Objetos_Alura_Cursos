@@ -8,4 +8,6 @@ Aula 1 - Métodos Default para Interfaces, pós Java 8 {
 	Esses métodos concretos, podem chamar métodos estáticos de outras classes, 
 	ou do próprio objeto, ou do que foi passado como argumento.
 
+	A grande vantagem dos "default methods" é que agora uma interface pode evoluir sem quebrar compatibilidade.
+
 }

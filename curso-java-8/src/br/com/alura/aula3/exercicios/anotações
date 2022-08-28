@@ -1,0 +1,9 @@
+Mudando do lambda para um method reference nosso código fica assim:
+
+palavras.sort(Comparator.comparing(String::length));
+
+A vantagem pode ser legibilidade. Nosso código fica ainda mais enxuto.
+
+Mais importante ainda é perceber que a inferencia de tipo é mais forte,
+
+já que explicitamente estamos dizendo que o método length pertence a String.

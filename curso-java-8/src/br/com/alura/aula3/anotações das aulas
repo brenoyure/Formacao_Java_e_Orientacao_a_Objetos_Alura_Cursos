@@ -1,0 +1,66 @@
+Aula 2 - Classes Anônimas & Lambdas {
+
+	Utilizamos uma classe anônima, para implementar o método do consumer<T> sem precisarmos criar uma concreta.
+	
+	Consumer<String> consumidor = new Consumer<String>() {
+			@Override
+			public void accept(String s) {
+				System.out.println(s);
+			}
+		};
+
+	palavras.forEach(new Consumer<String>() {
+			@Override
+			public void accept(String s) {
+				System.out.println(s);
+			}
+		});
+
+}
+
+	Pós Java 8, podemos utilizar um Lambda para simplificar, ficando: 
+	palavras.forEach(p -> System.out.println(p));
+
+	Lambdas também são chamadas de Interface Funcional, visto que só são boas 
+	para trabalhar quando a interface só possui um método. 
+
+	-> Não precisa do new, e também da assinatura do método, 
+	   mas precisa dos parâmetros e da implementação (o body {}).
+
+		Lambdas as vezes podem ficar grandes, quando temos mais de um statment...
+			palavras.sort((s1, s2) -> {
+			if (s1.length() < s2.length())
+				return -1;
+			else if (s1.length() > s2.length())
+				return 1;
+			else
+				return 0;
+		});
+
+
+
+
+		...mas podendo simplifica-lo obtendo o mesmo resultado:
+		Delegamos a comparação do tamanho das Strings, que nos devolve um int, 
+		para o método estático compare() da classe Integer, ficando:
+		
+		palavras.sort((s1, s2) -> Integer.compare(s1.length(), s2.length()));
+	  
+	  
+	  
+	   
+	Para o método .sort() da nossa Lista<T> que recebe como parâmetro um consumer, podemos passa-lo
+	da seguinte maneira:
+		Consumer<deStrings> com nome impressor, que recebe uma String s, e a imprime, através do
+		System.out.println(s), ficando:
+	Consumer<String> impressor = s -> System.out.println(s);
+	   
+	   
+	   
+Interface funcional pode ter 1 único método abstrato. 
+Além desse método ela pode ter outros métodos, contanto que sejam default ou 'static'.
+Essa estrutura é fundamental, pois assim o compilador sabe exatamente que o corpo da expressão 
+lambda que escrevemos é a implementação de seu único método abstrato
+
+	
+	   
