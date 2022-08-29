@@ -1,0 +1,26 @@
+Aula 5 - Anotações
+
+Optional é uma importante nova classe do Java 8. 
+É com ele que poderemos trabalhar de uma maneira mais organizada com possíveis valores null. 
+Em vez de ficar comparando if(algumaCoisa == null), o Optional já fornece uma série de métodos para nos ajudar nessas situações.
+
+
+Dado um Optional, podemos pegar seu conteúdo invocando o get. Ele vai devolver o Curso que queremos. Mas e se não houver nenhum? Uma exception será lançada.
+
+Curso curso = optional.get();
+
+
+
+Há métodos mais interessantes. 
+O orElse diz que ele deve devolver o curso que existe dentro desse optional, 
+ou então o que foi passado como argumento:
+
+Curso curso = optional.orElse(null);
+
+
+
+Nesse caso ou ele devolve o curso encontrado, ou null, caso nenhum seja encontrado. 
+Mesmo assim, ainda não está tão interessante. Há como evitar tanto o null, quanto as exceptions, 
+quanto os ifs. O método ifPresent executa um lambda (um Consumer) no caso de existir um curso dentro daquele optional:
+
+optional.ifPresent(c -> System.out.println(c.getNome()));
