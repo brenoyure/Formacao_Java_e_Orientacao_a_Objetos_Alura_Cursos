@@ -3,7 +3,7 @@ package br.com.alura.tdd.modelo;
 import java.math.BigDecimal;
 
 public enum Desempenho {
-	
+
 	A_DESEJAR {
 		@Override
 		public BigDecimal percentualReajuste() {
@@ -16,7 +16,7 @@ public enum Desempenho {
 		public BigDecimal percentualReajuste() {
 			return quinzePorCento;
 		}
-	}, 
+	},
 
 	OTIMO {
 		@Override
@@ -30,6 +30,5 @@ public enum Desempenho {
 	private static final BigDecimal vintePorCento = new BigDecimal("0.2");
 
 	public abstract BigDecimal percentualReajuste();
-
 
 }
